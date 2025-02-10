@@ -1,12 +1,7 @@
-if [ $1 = '-h' ]
-then
-        echo 'This programm accepts any FASTA file as a parameter, and produces a short report about its sequences, including their number, total length, length of the longest, length of the shortest, their average and finally their GC content (%)'
-        exit
-
-elif    [ $# -ne '1' ]
+if [ $# -ne '1' ]
         then
                 echo 'This program requires one and only one parameter (FASTA file)'
-		exit
+                exit
 
         elif  ! file $1 | grep -q 'ASCII text'
         then    echo 'This programm requires a FASTA file'
